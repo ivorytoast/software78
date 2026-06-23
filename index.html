@@ -34,7 +34,42 @@
             flex-direction: column;
             gap: 1.25rem;
             border-right: 1px solid #e6ddca;
+            position: relative;
         }
+
+        /* Desktop top-center project nav (fund78 always screen-centered) */
+        .project-nav {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 2;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            column-gap: 24px;
+            padding: 16px 34px;
+            background: rgba(253, 248, 240, 0.55);
+            border-bottom: 1px solid rgba(180, 168, 144, 0.4);
+            -webkit-backdrop-filter: blur(3px);
+            backdrop-filter: blur(3px);
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+        }
+
+        .pn-link {
+            color: #5a5142;
+            text-decoration: none;
+            border-bottom: 1.5px solid #c9bda6;
+            padding-bottom: 2px;
+            transition: border-color 0.2s ease;
+        }
+
+        .pn-link:hover { border-color: #5a5142; }
+        .pn-left { justify-self: end; }
+        .pn-center { justify-self: center; }
+        .pn-right { justify-self: start; }
 
         .col-left-content {
             flex: 1;
@@ -166,7 +201,7 @@
 
         /* surge15 mark — dark app-icon tile with the 15 lockup */
         .app-card.surge {
-            background: #fff url('../../Desktop/software78-site 2/surge-trail.png') no-repeat 10px bottom;
+            background: #fff url('surge-trail.png') no-repeat 10px bottom;
             background-size: 230px auto;
         }
         .app-card.surge .app-watermark {
@@ -203,27 +238,28 @@
         .app-card:nth-child(4) { border-top: 4px solid #fde68a; }
         .app-card:nth-child(4) .app-watermark { background: linear-gradient(135deg, #fff9f0, #fde8c8); color: #e3c896; }
 
-        /* ── Desktop: center left column, cards fill full screen height ── */
+        /* ── Desktop: full-screen meadow, projects as top nav ── */
         @media (min-width: 769px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .col-right { display: none; }
+
+            .project-nav { display: grid; }
+
             .col-left {
-                padding-right: 1rem;
+                border-right: none;
             }
 
             .col-left-content {
                 justify-content: center;
                 align-items: center;
+                padding-bottom: 34vh;
             }
 
             .site-footer {
                 text-align: center;
-            }
-
-            .apps-grid {
-                flex: 1;
-            }
-
-            .app-card {
-                flex: 1;
             }
         }
 
@@ -232,26 +268,34 @@
             color: #9a8c74;
         }
 
-        /* ── Mobile: single column ── */
+        /* ── Mobile: same full-screen meadow + top nav ── */
         @media (max-width: 768px) {
             .grid {
                 grid-template-columns: 1fr;
-                align-content: start;
+            }
+
+            .col-right { display: none; }
+
+            .project-nav {
+                display: grid;
+                padding: 14px 18px;
+                column-gap: 14px;
+                font-size: 13px;
             }
 
             .col-left-content {
-                flex: none;
+                justify-content: center;
+                align-items: center;
+                padding-bottom: 30vh;
             }
 
             .col-left {
-                background: url('software78-meadow-mobile-v2.png') center bottom / cover no-repeat, #fdf8f0;
+                background: url('software78-meadow-mobile.png') center bottom / cover no-repeat, #fdf8f0;
                 border-right: none;
-                border-bottom: 1px solid #e6ddca;
-                padding-bottom: 1.5rem;
             }
 
             .site-footer {
-                display: none;
+                text-align: center;
             }
         }
     </style>
@@ -261,6 +305,11 @@
 
         <!-- Left: identity & links -->
         <div class="col-left">
+            <nav class="project-nav">
+                <a class="pn-link pn-left" href="https://www.surge15.app">surge15</a>
+                <a class="pn-link pn-center" href="#">fund78</a>
+                <a class="pn-link pn-right" href="https://www.hamillpainting.com">hpw</a>
+            </nav>
             <div class="col-left-content">
                 <div class="logo-placeholder">Logo</div>
                 <div class="company-name">software78</div>
