@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>software78</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Spectral:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
@@ -14,7 +15,7 @@
         }
 
         body {
-            font-family: sans-serif;
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             background: #f9f9f9;
             color: #222;
         }
@@ -27,12 +28,12 @@
 
         /* ── Left column ── */
         .col-left {
-            background: #fff;
+            background: url('software78-meadow-desktop.png') center bottom / cover no-repeat, #fdf8f0;
             padding: 2.5rem 2rem;
             display: flex;
             flex-direction: column;
             gap: 1.25rem;
-            border-right: 1px solid #e0e0e0;
+            border-right: 1px solid #e6ddca;
         }
 
         .col-left-content {
@@ -43,28 +44,32 @@
         }
 
         .logo-placeholder {
-            width: 80px;
-            height: 80px;
-            background: #ddd;
-            border-radius: 8px;
+            width: 64px;
+            height: 64px;
+            background: rgba(255, 255, 255, 0.45);
+            border: 1.5px solid #d3c8b6;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.75rem;
-            color: #888;
+            font-size: 0.7rem;
+            color: #b6ab97;
         }
 
         .company-name {
-            font-size: 1.75rem;
-            font-weight: 700;
+            font-size: 1.95rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
             line-height: 1.2;
+            color: #2a2620;
         }
 
         .motto {
-            font-size: 1rem;
+            font-family: "Spectral", Georgia, serif;
             font-style: italic;
-            color: #555;
-            margin-top: -0.5rem;
+            font-size: 1.1rem;
+            color: #897c68;
+            margin-top: -0.25rem;
         }
 
         .social-links {
@@ -73,12 +78,12 @@
         }
 
         .social-links a {
-            color: #444;
+            color: #6b5f4e;
             transition: color 0.2s;
         }
 
         .social-links a:hover {
-            color: #000;
+            color: #2a2620;
         }
 
         .social-links svg {
@@ -161,7 +166,7 @@
 
         /* surge15 mark — dark app-icon tile with the 15 lockup */
         .app-card.surge {
-            background: #fff url('surge-trail.png') no-repeat 10px bottom;
+            background: #fff url('../../Desktop/software78-site 2/surge-trail.png') no-repeat 10px bottom;
             background-size: 230px auto;
         }
         .app-card.surge .app-watermark {
@@ -224,7 +229,7 @@
 
         .site-footer {
             font-size: 0.78rem;
-            color: #aaa;
+            color: #9a8c74;
         }
 
         /* ── Mobile: single column ── */
@@ -239,8 +244,9 @@
             }
 
             .col-left {
+                background: url('software78-meadow-mobile-v2.png') center bottom / cover no-repeat, #fdf8f0;
                 border-right: none;
-                border-bottom: 1px solid #e0e0e0;
+                border-bottom: 1px solid #e6ddca;
                 padding-bottom: 1.5rem;
             }
 
@@ -277,7 +283,7 @@
                     </div>
                     <div class="app-label">
                         <div class="app-name">surge15</div>
-                        <div class="app-desc">Anywhere. Your track. Surge.</div>
+                        <div class="app-desc">Your block. Your track. Surge.</div>
                     </div>
                 </a>
                 <a class="app-card" href="#">
