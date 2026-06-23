@@ -178,12 +178,17 @@
         @media (max-width: 768px) {
             .grid {
                 grid-template-columns: 1fr;
+                align-content: start;
+            }
+
+            .col-left-content {
+                flex: none;
             }
 
             .col-left {
                 border-right: none;
                 border-bottom: 1px solid #e0e0e0;
-                padding-bottom: 0.5rem;
+                padding-bottom: 1.5rem;
             }
 
             .site-footer {
